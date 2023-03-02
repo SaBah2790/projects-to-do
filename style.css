@@ -1,0 +1,164 @@
+body {
+	text-align: center;
+	font-family: "New Tegomin", serif;
+}
+h1 {
+	color: #38a3a5;
+	font-size: 4.5rem;
+	margin-top: -10px;
+	padding-bottom: 20px;
+}
+ul {
+	padding: 25px;
+	list-style: none;
+	border: 2px solid#045851;
+}
+a {
+	color: #38a3a5;
+	text-decoration: none;
+}
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+.author {
+	color: #38a3a5;
+	opacity: 50%;
+}
+.credit {
+	color: #38a3a5;
+	opacity: 30%;
+}
+.weather-image {
+	height: 250px;
+	width: 250px;
+}
+.app-border {
+	background: #003638;
+	display: block;
+	margin: 0 auto;
+	margin-top: 40px;
+	border: 2px solid rgb(65, 27, 116);
+	border-radius: 10px;
+	padding-top: 20px;
+	padding: 50px;
+	max-width: 1000px;
+}
+.weather-emoji {
+	display: block;
+	text-align: center;
+	margin-top: -55px;
+	font-size: 70px;
+}
+.location-data {
+	color: #38a3a5;
+	padding: 15px;
+	border-radius: 6px;
+	font-size: 20px;
+}
+.weather-data {
+	color: #38a3a5;
+	padding: 20px;
+	border-radius: 6px;
+	font-size: 20px;
+}
+.card {
+	width: 10rem;
+	background: transparent;
+	border-radius: 6px;
+	border: 2px solid#045851;
+	font-size: 15px;
+}
+input,
+::placeholder {
+	color: #38a3a5;
+}
+#search-city:hover {
+	transition: ease-in-out 100ms;
+	background: #2e5c61;
+}
+
+#search-city {
+	margin-top: 31px;
+	padding-top: 50px;
+	padding: 3px;
+	border-radius: 6px;
+	text-align: center;
+	background: #045851;
+	border: 2px solid#045851;
+	color: #43bec0;
+	background-color: #045851;
+	outline: none;
+}
+#button-submit {
+	padding: 3px;
+	border-radius: 6px;
+	text-align: center;
+	background: #045851;
+	border: 2px solid#045851;
+	color: #43bec0;
+	background-color: #045851;
+	outline: none;
+}
+
+#button-submit:hover {
+	transition: ease-in-out 100ms;
+	background: #2e5c61;
+}
+#current-location {
+	padding: 3px;
+	border-radius: 6px;
+	text-align: center;
+	background: #045851;
+	border: 2px solid#045851;
+	color: #43bec0;
+	background-color: #045851;
+	outline: none;
+}
+#current-location:hover {
+	transition: ease-in-out 100ms;
+	background: #2e5c61;
+}
+#description {
+	text-transform: capitalize;
+}
+#tomorrow {
+	background: transparent;
+	color: #57cc99;
+}
+#wednesday {
+	background: transparent;
+	color: #51c4d3;
+}
+#thursday {
+	background: transparent;
+	color: #8bbabb;
+}
+#friday {
+	background: transparent;
+	color: #03c988;
+}
+#saturday {
+	background: transparent;
+	color: #e1ffc2;
+}
+#tomorrow:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
+#wednesday:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
+#thursday:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
+#friday:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
+#saturday:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
