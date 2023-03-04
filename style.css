@@ -29,10 +29,6 @@ img {
 	color: #38a3a5;
 	opacity: 30%;
 }
-.weather-image {
-	height: 250px;
-	width: 250px;
-}
 .app-border {
 	background: #003638;
 	display: block;
@@ -43,12 +39,6 @@ img {
 	padding-top: 20px;
 	padding: 50px;
 	max-width: 1000px;
-}
-.weather-emoji {
-	display: block;
-	text-align: center;
-	margin-top: -55px;
-	font-size: 70px;
 }
 .location-data {
 	color: #38a3a5;
@@ -119,7 +109,11 @@ input,
 	transition: ease-in-out 100ms;
 	background: #2e5c61;
 }
-#description {
+#weather-icon {
+	height: 250px;
+	width: 250px;
+}
+#description::first-letter {
 	text-transform: capitalize;
 }
 #tomorrow {

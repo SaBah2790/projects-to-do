@@ -13,16 +13,19 @@ curentDay.innerHTML = day;
 //weather api response//
 function someWeather(response) {
 	let newCity = document.querySelector("#the-city");
-	newCity.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 	let degreesNow = Math.round(response.data.main.temp);
 	let degrees = document.querySelector("#degrees");
-	degrees.innerHTML = `${degreesNow} &deg;`;
 	let description = document.querySelector("#description");
-	description.innerHTML = response.data.weather[0].description;
 	let humidity = document.querySelector("#humidity");
-	humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 	let wind = document.querySelector("#wind");
+	let icon = document.querySelector("#weather-icon");
+	newCity.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+	degrees.innerHTML = `${degreesNow} &deg;`;
+	description.innerHTML = response.data.weather[0].description;
+	humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 	wind.innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)} km/h`;
+	icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+	console.log(response.data.weather[0].icon);
 }
 //city change//
 function defaultCity(city) {
