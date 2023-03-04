@@ -17,10 +17,7 @@ a {
 	color: #38a3a5;
 	text-decoration: none;
 }
-img {
-	max-height: 100%;
-	max-width: 100%;
-}
+
 .author {
 	color: #38a3a5;
 	opacity: 50%;
@@ -110,8 +107,8 @@ input,
 	background: #2e5c61;
 }
 #weather-icon {
-	height: 250px;
-	width: 250px;
+	max-height: 100%;
+	max-width: 100%;
 }
 #description::first-letter {
 	text-transform: capitalize;
