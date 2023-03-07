@@ -4,12 +4,12 @@ body {
 }
 h1 {
 	color: #38a3a5;
-	font-size: 4.5rem;
+	font-size: 4rem;
 	margin-top: -10px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 ul {
-	padding: 25px;
+	padding: 15px;
 	list-style: none;
 	border: 2px solid#045851;
 }
@@ -20,7 +20,6 @@ a {
 a:active {
 	color: #e1ffc2;
 }
-
 a:focus {
 	color: #e1ffc2;
 	outline: none;
@@ -37,7 +36,7 @@ a:focus {
 	background: #003638;
 	display: block;
 	margin: 0 auto;
-	margin-top: 40px;
+	margin-top: 30px;
 	border: 2px solid rgb(65, 27, 116);
 	border-radius: 10px;
 	padding-top: 20px;
@@ -67,11 +66,17 @@ input,
 ::placeholder {
 	color: #38a3a5;
 }
+.card-body {
+	background: transparent;
+}
+.card:hover {
+	transition: ease-in-out 200ms;
+	transform: scale(1.2);
+}
 #search-city:hover {
 	transition: ease-in-out 100ms;
 	background: #2e5c61;
 }
-
 #search-city {
 	margin-top: 31px;
 	padding-top: 50px;
@@ -94,7 +99,6 @@ input,
 	background-color: #045851;
 	outline: none;
 }
-
 #button-submit:hover {
 	transition: ease-in-out 100ms;
 	background: #2e5c61;
@@ -121,42 +125,17 @@ input,
 	text-transform: capitalize;
 }
 #tomorrow {
-	background: transparent;
 	color: #57cc99;
 }
 #wednesday {
-	background: transparent;
 	color: #51c4d3;
 }
 #thursday {
-	background: transparent;
 	color: #8bbabb;
 }
 #friday {
-	background: transparent;
 	color: #03c988;
 }
 #saturday {
-	background: transparent;
 	color: #e1ffc2;
-}
-#tomorrow:hover {
-	transition: ease-in-out 200ms;
-	transform: scale(1.2);
-}
-#wednesday:hover {
-	transition: ease-in-out 200ms;
-	transform: scale(1.2);
-}
-#thursday:hover {
-	transition: ease-in-out 200ms;
-	transform: scale(1.2);
-}
-#friday:hover {
-	transition: ease-in-out 200ms;
-	transform: scale(1.2);
-}
-#saturday:hover {
-	transition: ease-in-out 200ms;
-	transform: scale(1.2);
 }

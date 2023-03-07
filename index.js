@@ -10,6 +10,11 @@ let day = date.toLocaleDateString(
 let curentDay = document.querySelector("#current-day");
 curentDay.innerHTML = day;
 
+function forecastNext(coordinates) {
+	let apiKey = "0ebc654fccbc00189d5408f3d6f15b08";
+	let apiLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+	axios.get(apiLink).then(nextDays);
+}
 //weather api response//
 function someWeather(response) {
 	let newCity = document.querySelector("#the-city");
@@ -25,6 +30,55 @@ function someWeather(response) {
 	humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 	wind.innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)} km/h`;
 	icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+	forecastNext(response.data.coord);
+}
+//day display
+function showDay(timeStamp) {
+	let date = new Date(timeStamp * 1000);
+	let dayNew = date.getDay();
+	let days = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday",
+	];
+	return days[dayNew];
+}
+//weather forecast for 5 days
+function nextDays(response) {
+	let dayOne = document.querySelector("#day-1");
+	let dayTwo = document.querySelector("#day-2");
+	let dayThree = document.querySelector("#day-3");
+	let dayFour = document.querySelector("#day-4");
+	let dayFive = document.querySelector("#day-5");
+	let forecastOne = document.querySelector("#minmax-1");
+	let forecastTwo = document.querySelector("#minmax-2");
+	let forecastThree = document.querySelector("#minmax-3");
+	let forecastFour = document.querySelector("#minmax-4");
+	let forecastFive = document.querySelector("#minmax-5");
+	dayOne.innerHTML = `${showDay(response.data.daily[0].dt)}`;
+	dayTwo.innerHTML = `${showDay(response.data.daily[1].dt)}`;
+	dayThree.innerHTML = `${showDay(response.data.daily[2].dt)}`;
+	dayFour.innerHTML = `${showDay(response.data.daily[3].dt)}`;
+	dayFive.innerHTML = `${showDay(response.data.daily[4].dt)}`;
+	forecastOne.innerHTML = `Temperature ${Math.round(
+		response.data.daily[0].temp.max
+	)}°C / ${Math.round(response.data.daily[0].temp.min)}°C`;
+	forecastTwo.innerHTML = `Temperature ${Math.round(
+		response.data.daily[1].temp.max
+	)}°C / ${Math.round(response.data.daily[1].temp.min)}°C`;
+	forecastThree.innerHTML = `Temperature ${Math.round(
+		response.data.daily[2].temp.max
+	)}°C / ${Math.round(response.data.daily[2].temp.min)}°C`;
+	forecastFour.innerHTML = `Temperature ${Math.round(
+		response.data.daily[3].temp.max
+	)}°C / ${Math.round(response.data.daily[3].temp.min)}°C`;
+	forecastFive.innerHTML = `Temperature ${Math.round(
+		response.data.daily[4].temp.max
+	)}°C / ${Math.round(response.data.daily[4].temp.min)}°C`;
 }
 //city change//
 function defaultCity(city) {
