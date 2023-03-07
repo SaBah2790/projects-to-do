@@ -10,12 +10,7 @@ let day = date.toLocaleDateString(
 let curentDay = document.querySelector("#current-day");
 curentDay.innerHTML = day;
 
-function forecastNext(coordinates) {
-	let apiKey = "0ebc654fccbc00189d5408f3d6f15b08";
-	let apiLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-	axios.get(apiLink).then(nextDays);
-}
-//weather api response//
+//weather api response
 function someWeather(response) {
 	let newCity = document.querySelector("#the-city");
 	let degreesNow = Math.round(response.data.main.temp);
@@ -32,7 +27,7 @@ function someWeather(response) {
 	icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
 	forecastNext(response.data.coord);
 }
-//day display
+//day display for forecast
 function showDay(timeStamp) {
 	let date = new Date(timeStamp * 1000);
 	let dayNew = date.getDay();
@@ -48,6 +43,11 @@ function showDay(timeStamp) {
 	return days[dayNew];
 }
 //weather forecast for 5 days
+function forecastNext(coordinates) {
+	let apiKey = "0ebc654fccbc00189d5408f3d6f15b08";
+	let apiLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+	axios.get(apiLink).then(nextDays);
+}
 function nextDays(response) {
 	let dayOne = document.querySelector("#day-1");
 	let dayTwo = document.querySelector("#day-2");
@@ -80,7 +80,7 @@ function nextDays(response) {
 		response.data.daily[4].temp.max
 	)}°C / ${Math.round(response.data.daily[4].temp.min)}°C`;
 }
-//city change//
+//city change
 function defaultCity(city) {
 	let apiKey = "0ebc654fccbc00189d5408f3d6f15b08";
 	let apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -94,7 +94,7 @@ function cityLookUp(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", cityLookUp);
 
-//my weather//
+//weather in my location
 function weatherMyLocation(position) {
 	let latitude = position.coords.latitude;
 	let longitude = position.coords.longitude;
@@ -109,7 +109,7 @@ let myCurrentPosition = document.querySelector("#current-location");
 myCurrentPosition.addEventListener("click", myLocation);
 
 //weather degrees conversion
-let currentUnit = "celsius"; // initialize current unit to Celsius
+let currentUnit = "celsius";
 
 function convertTemperature(event) {
 	event.preventDefault();
