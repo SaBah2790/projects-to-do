@@ -17,6 +17,12 @@ a {
 	color: #38a3a5;
 	text-decoration: none;
 }
+.card {
+	margin: 0;
+	float: none;
+	margin-bottom: 10px;
+	justify-content: center;
+}
 a:active {
 	color: #e1ffc2;
 }
